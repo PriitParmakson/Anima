@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Anima</title>
+  <meta name="viewport" content="width=device-width" initial-scale="1">
+	
+	<!-- NB! Kuna pilvest antakse https-ga, siis kõik laadimised ka sellega. -->
+	
+	<!-- Underscore -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+	
+	<!-- JQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery.min.js"></script>
+	<!-- Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+	<!-- Parse -->
+  <script src="https://www.parsecdn.com/js/parse-1.2.18.min.js"></script>
+
+	<!-- List.js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+	
+	<link rel='stylesheet' href='Anima.css'>	
+	<script src='Anima.js'></script>
+	<script src='Nädal.js'></script>	
+	<script src='Laadimine.js'></script>
+	<script src='Mitmesugused.js'></script>
+
+	<script type='text/template' id='tabeliReaTempliit'>
+		<td id='<%= _.escape(objectId) %>'><%= _.escape(nimetus) %></td>
+		<td class='sooritus'></td>
+		<td class='sooritus'></td>
+		<td class='sooritus'></td>
+		<td class='sooritus'></td>
+		<td class='sooritus'></td>
+		<td class='sooritus'></td>
+		<td class='sooritus'></td>
+	</script>
+	
+</head>	
+
+<body>
+
+<div class='container'><!-- Bootstrap-->
+
+<div id='ümbris'>
+
+<div id='logimisePäis'>
+	<div id="sisselogimine">
+		<form id='sisenemisvorm' class="form-inline">
+			<div class='form-group'>
+				<input type="text" name='username' class="form-control" placeholder="Nimi" required="" autofocus="">
+			</div>	
+			<div class='form-group'>
+				<input type="password" name='password' class="form-control" placeholder="Parool" required="">
+			</div>	
+			<div class='form-group'>
+				<button class="form-control nupp btn btn-default" type="submit">Sisene</button>
+			</div>
+		</form>
+	</div>
+	<div id='sisseLogitud'>
+		<p>Priit Parmakson</p>
+	</div>
+</div>
+
+<div id='kerimisnupud' class='clearfix'>
+	<button id="eelmineNädal" class="pull-left nupp btn btn-default btn-md">&#x3008;</button>
+	<button id="järgmineNädal" class="pull-right nupp btn btn-default btn-md">&#x3009;</button>
+	<span id='nädalaNumber'></span>
+</div>
+
+<table id='HarjutusteVaade'>
+	<thead>
+		<tr>
+			<th>Harjutus</th>
+			<th>E<br/><span id='p1'></span></th>
+			<th>T<br/><span id='p2'></span></th>
+			<th>K<br/><span id='p3'></span></th>
+			<th>N<br/><span id='p4'></span></th>
+			<th>R<br/><span id='p5'></span></th>
+			<th>L<br/><span id='p6'></span></th>
+			<th>P<br/><span id='p7'></span></th>
+		</tr>
+	</thead>
+</table>
+
+</div><!-- ümbris -->
+</div><!-- container -->
+
+</body>
+</html>
+
